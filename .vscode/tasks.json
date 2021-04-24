@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [    
+ {
+    "label": "aggro_winmm loader [Windows 32-bit]",
+    "type": "shell",
+    "command": [
+        "i686-w64-mingw32-gcc",        
+        "-m32",
+        "-shared",
+        "-fshort-wchar",           
+        "${workspaceFolder}/aggro_winmm.c",
+        "-static", 
+        "-static-libgcc",        
+        "-lgcc",
+        "-o ${workspaceFolder}/aggro_winmm.dll"
+    ],
+    "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+    },
+    "group": {
+        "kind": "build",
+        "isDefault": true
+    }
+}
+]
+}
