@@ -10,9 +10,9 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     HMODULE hWinmm;
     switch (ul_reason_for_call) {
     case DLL_PROCESS_ATTACH:
-        hWinmm = GetModuleHandleA("winmm.dll");
-        if(hWinmm){
-            FreeLibrary(hWinmm);
+        // Unload if it's already loaded...
+        if(GetModuleHandleA("winmm.dll")){
+            FreeLibrary(GetModuleHandleA("winmm.dll"));
         }        
         LoadLibraryA("./winmm.dll");
         break;

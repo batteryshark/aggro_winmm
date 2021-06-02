@@ -7,8 +7,7 @@
     "command": [
         "i686-w64-mingw32-gcc",        
         "-m32",
-        "-shared",
-        "-fshort-wchar",           
+        "-shared",           
         "${workspaceFolder}/aggro_winmm.c",
         "-static", 
         "-static-libgcc",        
